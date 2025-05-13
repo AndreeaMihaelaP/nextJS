@@ -1,20 +1,25 @@
 import { useState } from "react";
 
+import PostList from "./components/PostsList";
+import MainHeader from "./components/MainHeader";
+
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [modalIsVisible, setModalIsVisible] = useState(false);
 
+  function showModalHandler() {
+    setModalIsVisible(true);
+  }
+  function hideModalHandler() {
+    setModalIsVisible(false);
+  }
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      <MainHeader onCreatePost={showModalHandler} />
+      <main>
+        <PostList isPosting={modalIsVisible} onClosePost={hideModalHandler} />
+      </main>
     </>
   );
 }
