@@ -7,6 +7,10 @@
   animation: animate-in 1s ease-out forwards;
 }
 
+.post a {
+  text-decoration: none;
+}
+
 .author {
   font-size: 0.8rem;
   font-weight: bold;
@@ -15,7 +19,7 @@
   text-transform: uppercase;
 }
 
-.body {
+.text {
   white-space: pre-wrap;
   font-size: 1.25rem;
   margin: 0.25rem 0 0 0;
