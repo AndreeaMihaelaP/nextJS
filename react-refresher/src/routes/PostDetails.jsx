@@ -38,3 +38,4 @@ export async function loader({ params }) {
   const resData = await response.json();
   return resData.post;
 }
+\
